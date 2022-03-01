@@ -76,6 +76,8 @@ That is what asynchronous messaging infrastructure does, but for your apps.
 infrastructure elements and the list is by no means exhaustive. I will give you
 a brief definitions for all the words in those names for orientation.
 
+![service patterns](images/service-patterns.png)
+
 * **Producer** - A producer (or _sender_ or _publisher_) is a role in a software
   system that wants to share/distribute information and therefore produces
   messages and makes them available via a messaging infrastructure.
