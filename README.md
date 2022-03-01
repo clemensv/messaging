@@ -158,7 +158,19 @@ a brief definitions for all the words in those names for orientation.
 
 ## Open Standards
 
+This section lists several open standards efforts that are important to the
+messaging space. The focus of this section is on open and
+product/project-neutral data formats and protocol standards, not on
+project-proprietary wire formats even if the projects are open source. 
+
 ### CNCF CloudEvents
+
+
+CloudEvents is a common information model for events. It defines what an event
+is and what a set of common attributes are that make the event useful in many
+contexts. CloudEvents then defines formats (JSON, Avro, AMQP, Protbuf, XML) in
+which a CloudEvent can be expressed and protocol bindings for how CloudEvents
+can be transported (HTTP, AMQP, MQTT, Kafka).  
 
 * [CloudEvents 1.0.2. specification](https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/spec.md).
 * [CloudEvents 1.0.2 repo](https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/) where you can find all the protocol bindings and format specs
@@ -169,6 +181,13 @@ a brief definitions for all the words in those names for orientation.
 
 
 ### OASIS AMQP 
+
+AMQP ("Advanced Message Queue Protocol") is the global standard enterprise
+messaging protocol. Initiated by JPMorgan, it's the standard protocol in many
+areas of the financial industry, trade, and industrial applications. It has been
+developed in OASIS and standardized by ISO as 19464:2014.
+
+AMQP is implemented by a most major queue-oriented message brokers.
 
 * [AMQP 1.0](https://docs.oasis-open.org/amqp/core/v1.0/os/amqp-core-overview-v1.0-os.html) core standard document. Also ISO 19464:2014.
   * [AMQP Addressing Version 1.0](https://docs.oasis-open.org/amqp/addressing/v1.0/csd01/addressing-v1.0-csd01.html)
@@ -181,6 +200,12 @@ a brief definitions for all the words in those names for orientation.
 * [My 6-Part video series](https://www.youtube.com/watch?v=ODpeIdUdClc&list=PLmE4bZU0qx-wAP02i0I7PJWvDWoCytEjD) explaining AMQP
 
 ### OASIS MQTT 
+
+MQTT (formerly "MQ Telemetry Transport") is a lightweight pubsub protocol that
+was initially developed by IBM as a companion protocol to their MQ product. IBM
+then submitted it for standardization to OASIS, where the input specification
+was turned into version 3.1.1. and the TC then developed version 5.0 from there,
+with significant input from Microsoft.
 
 * [MQTT 3.1.1](https://docs.oasis-open.org/mqtt/mqtt/v3.1.1/mqtt-v3.1.1.html)
 * [MQTT 5.0](https://docs.oasis-open.org/mqtt/mqtt/v5.0/mqtt-v5.0.html)
