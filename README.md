@@ -243,7 +243,7 @@ with significant input from Microsoft.
 
 ### Microsoft Azure
 
-This is a list of the Azure Messaging services. 
+This is a list of the Azure Messaging services.
 
 * [Azure Messaging Overview](https://azure.microsoft.com/en-us/solutions/messaging-services/)
 * [Azure Service Bus](https://azure.microsoft.com/en-us/services/service-bus) -
@@ -259,13 +259,37 @@ This is a list of the Azure Messaging services.
    * [Transfers, locks, and settlement](https://docs.microsoft.com/en-us/azure/service-bus-messaging/message-transfers-locks-settlement) 
    * [Sessions](https://docs.microsoft.com/en-us/azure/service-bus-messaging/message-sessions)
    * [Federation](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-federation-overview)  
-* [Azure Event Grid](https://azure.microsoft.com/en-us/services/event-grid/)
-* [Azure Relay](https://docs.microsoft.com/en-us/azure/azure-relay/relay-what-is-it)
+* [Azure Event Grid](https://azure.microsoft.com/en-us/services/event-grid/) - publish/subscribe event router with support for CNCF CloudEvents
+  * [Tutorial: Automate resizing uploaded images using Event Grid](https://docs.microsoft.com/en-us/azure/event-grid/resize-images-on-storage-blob-upload-event?tabs=dotnet%2Cazure-powershell)
+  * [Tutorial: Send email notifications about Azure IoT Hub events using Event Grid and Logic Apps](https://docs.microsoft.com/en-us/azure/event-grid/publish-iot-hub-events-to-logic-apps)
+  * [Tutorial: Route custom events to Azure Relay Hybrid Connections with Azure CLI and Event Grid](https://docs.microsoft.com/en-us/azure/event-grid/custom-event-to-hybrid-connection)
+* [Azure Relay and Hybrid Connections](https://docs.microsoft.com/en-us/azure/azure-relay/relay-what-is-it)
+  * [What is Relay?](https://docs.microsoft.com/en-us/azure/azure-relay/relay-what-is-it)
+  * [Azure Relay Hybrid Connections protocol](https://docs.microsoft.com/en-us/azure/azure-relay/relay-hybrid-connections-protocol)
 * [Azure IoT Hub](https://azure.microsoft.com/en-us/services/iot-hub/)
 * [Azure WebPubSub](https://azure.microsoft.com/en-us/services/web-pubsub/)
 * [Azure SignalR](https://azure.microsoft.com/en-us/services/signalr-service/)
 * [Azure Notification Hubs](https://azure.microsoft.com/en-us/services/notification-hubs/)
+
+### AWS
+
+AWS has a fleet of messaging services which reflects very similar architectural
+considerations as the Azure services.
+
+* [Amazon SQS](https://aws.amazon.com/en/sqs/) corresponds to Azure Storage
+  Queues and Service Bus Queues (FIFO)
+* [Amazon MQ](https://aws.amazon.com/en/amazon-mq) corresponds to Azure Service
+  Bus, albeit at far smaller scale and less managed
+* [Amazon Kinesis](https://aws.amazon.com/en/kinesis/) corresponds to Azure
+  Event Hubs
+* [Amazon EventBridge](https://aws.amazon.com/de/eventbridge/) corresponds to
+  Azure Event Grid
+* [Amazon IoT Core](https://aws.amazon.com/en/iot-core/) corresponds to Azure
+  IoT Hub.
 ### Apache 
+
+The Apache Software Foundation hosts several popular open source projects that
+produce message and event broker infrastructures.
 
 * [ActiveMQ](https://activemq.apache.org/)
 * [Qpid](https://qpid.apache.org/)
@@ -274,10 +298,18 @@ This is a list of the Azure Messaging services.
 
 ### CNCF
 
+The Cloud Native Computing Foundation also hosts a few messaging and eventing
+centric projects.
+
 * [NATS](https://www.cncf.io/projects/nats/)
 * [Pravega](https://cncf.pravega.io/)
+* [Strimzi](https://www.cncf.io/projects/strimzi/)
 
 ### Eclipse
+
+The Eclipse Foundation has a strong IoT focus and hosts various MQTT-related
+projects. It is also hosting the Jakarta Messaging project that carries forward
+the popular JMS standard.
 
 * [Mosquitto](https://mosquitto.org/)
 * [Paho](https://www.eclipse.org/paho/)
