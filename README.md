@@ -138,7 +138,7 @@ a brief definitions for all the words in those names for orientation.
   infrastructure that brokers messages and does so via queues or routers or
   streams.
 
-## Patterns
+## Introductions and Patterns
 
 * [Talk: "Messaging Patterns for Developers"
   (2021)](https://www.youtube.com/watch?v=ef1DK76rseM). <br>This is a .NET talk, but
@@ -155,6 +155,10 @@ a brief definitions for all the words in those names for orientation.
   data](https://azure.microsoft.com/en-us/blog/events-data-points-and-messages-choosing-the-right-azure-messaging-service-for-your-data/). <br>A blog article explaining the differences between the services we offer.
 * [Asynchronous messaging
   options](https://docs.microsoft.com/en-us/azure/architecture/guide/technology-choices/messaging).<br>Azure architecture center article that lays out those options in more detail.
+* [Samples: Streaming at scale in
+  Azure](https://docs.microsoft.com/en-us/samples/azure-samples/streaming-at-scale/streaming-at-scale/),
+  [(repo)](https://github.com/Azure-Samples/streaming-at-scale)<br>A repository
+  with many examples of composite usage of Azure services for event streaming.
 
 ## Open Standards
 
@@ -172,9 +176,26 @@ contexts. CloudEvents then defines formats (JSON, Avro, AMQP, Protbuf, XML) in
 which a CloudEvent can be expressed and protocol bindings for how CloudEvents
 can be transported (HTTP, AMQP, MQTT, Kafka).  
 
-* [CloudEvents 1.0.2. specification](https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/spec.md).
-* [CloudEvents 1.0.2 repo](https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/) where you can find all the protocol bindings and format specs
-* [CloudEvents working branch](https://github.com/cloudevents/spec/tree/main)
+* [CloudEvents Primer](https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/primer.md) - An introduction to CloudEvents with architectural considerations.
+* [CloudEvents - Version 1.0.2](https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/spec.md). This is the main specification.
+  * [HTTP Protocol Binding for CloudEvents - Version 1.0.2](https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/bindings/http-protocol-binding.md)
+  * [HTTP 1.1 Web Hooks for Event Delivery - Version 1.0.2](https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/http-webhook.md)
+  * [AMQP Protocol Binding for CloudEvents - Version 1.0.2](https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/bindings/amqp-protocol-binding.md)
+  * [Kafka Protocol Binding for CloudEvents - Version 1.0.2](https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/bindings/kafka-protocol-binding.md)
+  * [MQTT Protocol Binding for CloudEvents - Version 1.0.2](https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/bindings/mqtt-protocol-binding.md)
+  * [NATS Protocol Binding for CloudEvents - Version 1.0.2](https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/bindings/nats-protocol-binding.md)
+  * [WebSockets Protocol Binding for CloudEvents - Version 1.0.2](https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/bindings/websockets-protocol-binding.md)
+  * [Avro Event Format for CloudEvents - Version 1.0.2](https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/formats/avro-format.md)
+  * [JSON Event Format for CloudEvents - Version 1.0.2](https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/formats/json-format.md)
+  * [Protobuf Event Format for CloudEvents - Version 1.0.2](https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/formats/protobuf-format.md)
+* [CloudEvents 1.0.2 repo](https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/) where you
+  can find all the protocol bindings and format specs
+* [CloudEvents working branch](https://github.com/cloudevents/spec/tree/main) where we do the current work, especially on schema and message catalogs and discovery.
+   * [CNCF Schema Registry API Version 0.2-wip](https://github.com/cloudevents/spec/blob/main/schemaregistry/spec.md)
+   * [CNCF CloudEvents – Subscriptions API - Version 0.1-wip](https://github.com/cloudevents/spec/blob/main/subscriptions/spec.md)
+   * [Discovery and Subscription Primer - WIP](https://github.com/cloudevents/spec/blob/main/discovery/primer.md)
+   * [CloudSubscriptions: Discovery - Version 0.1-wip](https://github.com/cloudevents/spec/blob/main/discovery/spec.md)
+   * [CNCF Message and Event Catalog API (not yet merged)](https://github.com/clemensv/spec/blob/messagecatalog/messagecatalog/spec.md)
 * [Talk: "CloudEvents Intro and Demos"](https://www.youtube.com/watch?v=yg7RuDWHwV8)
 * [Talk: "CloudEvents 1.0 and Beyond"](https://www.youtube.com/watch?v=YpUQbxx3jkk)
 * [Talk: "CloudEvents DeepDive", KubeCon Europe 2019](https://www.youtube.com/watch?v=-3gOqR_TGEs)
@@ -215,17 +236,29 @@ with significant input from Microsoft.
 ## Products & Cloud Services
 
 ### Microsoft Azure
+
+This is a list of the Azure Messaging services. 
+
 * [Azure Messaging Overview](https://azure.microsoft.com/en-us/solutions/messaging-services/)
-* [Azure Service Bus](https://azure.microsoft.com/en-us/services/service-bus)
+* [Azure Service Bus](https://azure.microsoft.com/en-us/services/service-bus) -
+  transactional Queue and PubSub message broker with full JMS 2.0 support.
+   * [Azure Service Bus bindings for Azure Functions](https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-service-bus)
+   * [Azure Service Bus JMS 2.0 developer guide](https://docs.microsoft.com/en-us/azure/service-bus-messaging/jms-developer-guide?tabs=JMS-20)
    * [Federation](https://docs.microsoft.com/en-us/azure/service-bus-messaging/service-bus-federation-overview)
-* [Azure Event Hubs](https://azure.microsoft.com/en-us/services/event-hubs/)
+* [Azure Event Hubs](https://azure.microsoft.com/en-us/services/event-hubs/) -
+  fast event stream engine with AMQP, HTTP, and Apache Kafka protocol support.
+   * [Use Azure Event Hubs from Apache Kafka applications](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-for-kafka-ecosystem-overview)
+   * [Azure Schema Registry in Azure Event Hubs](https://docs.microsoft.com/en-us/azure/event-hubs/schema-registry-overview)
+   * [How to create a Spring Cloud Stream Binder application with Azure Event Hubs](https://docs.microsoft.com/en-us/azure/developer/java/spring-framework/configure-spring-cloud-stream-binder-java-app-azure-event-hub)
    * [Transfers, locks, and settlement](https://docs.microsoft.com/en-us/azure/service-bus-messaging/message-transfers-locks-settlement) 
    * [Sessions](https://docs.microsoft.com/en-us/azure/service-bus-messaging/message-sessions)
    * [Federation](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-federation-overview)  
 * [Azure Event Grid](https://azure.microsoft.com/en-us/services/event-grid/)
 * [Azure Relay](https://docs.microsoft.com/en-us/azure/azure-relay/relay-what-is-it)
 * [Azure IoT Hub](https://azure.microsoft.com/en-us/services/iot-hub/)
-
+* [Azure WebPubSub](https://azure.microsoft.com/en-us/services/web-pubsub/)
+* [Azure SignalR](https://azure.microsoft.com/en-us/services/signalr-service/)
+* [Azure Notification Hubs](https://azure.microsoft.com/en-us/services/notification-hubs/)
 ### Apache 
 
 * [ActiveMQ](https://activemq.apache.org/)
