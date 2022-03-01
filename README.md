@@ -1,5 +1,7 @@
 # Asynchronous Messaging and Eventing Resources
 
+![service patterns](images/service-patterns.png)
+
 Once you've read through this intro, you will find that this document contains a
 (growing) list of resources that cover whether and how to use asynchronous
 messaging/queueing and eventing infrastructures with your applications
@@ -75,8 +77,6 @@ That is what asynchronous messaging infrastructure does, but for your apps.
 "event aggregator", are all names for asynchronous messaging and eventing
 infrastructure elements and the list is by no means exhaustive. I will give you
 a brief definitions for all the words in those names for orientation.
-
-![service patterns](images/service-patterns.png)
 
 * **Producer** - A producer (or _sender_ or _publisher_) is a role in a software
   system that wants to share/distribute information and therefore produces
