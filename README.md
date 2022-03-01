@@ -99,7 +99,9 @@ a brief definitions for all the words in those names for orientation.
   the morning of this day if it happened to you. The great thing about facts is
   that they can be easily distributed and cached and copied and transformed
   because the exact information they carry will forever be true and never again
-  change. (These philosophical considerations matter a lot for arriving at smart
+  change. "Discrete" events are independent of other events (unlike those in a
+  _stream_, see below) and are usually immediately actionable. (These
+  philosophical considerations matter a lot for arriving at smart
   architectures).
 * **Job** - A job is a variation of a message whose content reflects an intent.
   The producer sends content with the intent of a consumer doing some work based
@@ -122,13 +124,13 @@ a brief definitions for all the words in those names for orientation.
   the message metadata annotations. Routers may often be configured dynamically
   and at runtime to deliver messages to interested parties, which are then
   called subscribers. 
-* **Stream** - An event stream is a sequence of related events, which typically
-  stem from the same producer or at least the same producer context (i.e.
-  multiple producers create events about the same thing). An event stream engine
-  may multiplex delivery of many concurrent event streams (occasionally also
-  called _topic_) and may split those up across several physical logs
-  (partitions) while keeping any one event stream together on a partition to
-  ensure preserving order.
+* **Stream** - An event stream (or _event series_) is a sequence of related
+  events, which typically stem from the same producer or at least the same
+  producer context (i.e. multiple producers create events about the same thing).
+  An event stream engine may multiplex delivery of many concurrent event streams
+  (occasionally also called _topic_) and may split those up across several
+  physical logs (partitions) while keeping any one event stream together on a
+  partition to ensure preserving order.
 * **Checkpoint** - Event streams are usually processed by taking several events
   at a time. Since events are not jobs and therefore do not require exclusive
   handling, event stream engines therefore shift the burden of keeping track of
