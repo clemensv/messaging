@@ -1,5 +1,7 @@
 # Asynchronous Messaging and Eventing Resources
 
+[Why would I care?](#%22why-would-i-care%22) | [Definitions: Messaging or eventing infrastructure](#definitions-messaging-or-eventing-infrastructure) | [Resources: Introductions and Patterns](#introductions-and-patterns) | [Resources: Open Standards](#open-standards) | [Resources: Products & Cloud Services](#products--cloud-services)
+
 ![service patterns](images/service-patterns.png)
 
 Once you've read through this intro, you will find that this document contains a
@@ -71,7 +73,7 @@ That is what asynchronous messaging infrastructure does, but for your apps.
   networks, allowing information to pass between applications in those networks
   without there being IP-level connectivity between them.
 
-### Messaging or eventing infrastructure
+## Definitions: Messaging or eventing infrastructure
 
 "Message broker", "queue", "service bus", "event router", "event stream engine",
 "event aggregator", are all names for asynchronous messaging and eventing
