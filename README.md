@@ -1,19 +1,20 @@
 # Asynchronous Messaging and Eventing Resources
 
-Once you've read through the intro, you will find that this document contains a
+Once you've read through this intro, you will find that this document contains a
 (growing) list of resources that cover whether and how to use asynchronous
 messaging/queueing and eventing infrastructures with your applications
-effectively and which you can use for self-study purposes. 
+effectively and which you can use for self-study purposes.
 
 I am the product architect of the messaging and eventing services in the
 Microsoft Azure cloud and have helped building these capabilities for over 15
-years now, starting well before the name "Azure" even existed. Our team owns
-multiple hyperscale broker platforms (Azure Service Bus, Event Hubs, Event Grid,
-and Relay) that are deployed in hundreds of large clusters in over 60 Azure
-regions all around the world and handle many (!) trillion (!) requests each day
-(!). We also invented, prototyped, and productized several other Azure
-capabilities (Azure IoT Hub, Azure Notification Hubs, Tenant Resource
-Provisioning) that are now owned by different teams at Microsoft. 
+years now, starting well before the name "Azure" even existed. 
+
+Our team owns multiple hyperscale broker platforms (Azure Service Bus, Event
+Hubs, Event Grid, and Relay) that are deployed in hundreds of large clusters in
+over 60 Azure regions all around the world and handle many (!) trillion (!)
+requests each day (!). We also invented, prototyped, and productized several
+other Azure capabilities (Azure IoT Hub, Azure Notification Hubs, Tenant
+Resource Provisioning) that are now owned by different teams at Microsoft.
 
 In addition to the product work, I am deeply engaged in open interoperability
 standards and represent Microsoft on the OASIS AMQP Technical Committee (as
@@ -26,28 +27,31 @@ specification in particular. Relevant technical documents are also linked below.
 ## "Why would I care?"
 
 In addition to pointing to resources, allow me to also set some context with a
-few definitions (some of which may be surprising) of some key concepts of
-messaging and eventing. I will keep these brief since the concepts are covered
-more broadly in many of the resources I point to.
+few definitions (some of which may be surprising) of key concepts of messaging
+and eventing. I will keep these brief since the concepts are covered more
+broadly in many of the resources I point to.
 
-Generally, if you are building software that requires more than one computer to do its job, you should know about asynchronous messaging concepts.
+Generally, if you are building software that requires more than one computer to
+do its job, you should know about asynchronous messaging concepts.
 
 "Asynchronous" means here: Your application sends a message or event and then
 carries on doing something else. It does not sit around waiting for an
-outcome. For many developers, that is the first giant mental hurdle, since we've
-all been raised on "imperative" programming models. You make a call and cause
-some work to happen and only once that work has been reported as done (or
-failed) your own code continues with its work.
+outcome.
+
+For many developers, that is the first giant mental hurdle, since we've all been
+raised on "imperative" programming models. You make a function call and cause some
+work to happen and only once that work has been reported as done (or failed)
+your own code continues with its work.
 
 Yet, we all use asynchronous messaging every day in the physical world. If we
 want to send a gift to someone in a different city, we will go to the post
-office and entrust the postal service with the package and that takes care of
-getting it there and also tracking whether the package has been delivered
-successfully. Once the package has been delivered, your friend might then call
-you and excitedly thank you for the gift you sent. If you ask for it you will
-get feedback, but maybe on a different channel and after however long the
-handling and delivery took and usually with a clearly reference to the package
-you sent.
+office and entrust the postal service with the package. The postal service takes
+care of getting it to the destination and also tracks and reports whether the
+package has been delivered successfully. Once the package has been delivered,
+your friend might then call you and excitedly thank you for the gift you sent.
+If you ask for it you will get feedback, but maybe on a different channel and
+after however long the handling and delivery took and usually with a clear
+reference to the package you sent.
 
 That is what asynchronous messaging infrastructure does, but for your apps.
 
@@ -76,7 +80,9 @@ a brief definitions for all the words in those names for orientation.
   system that wants to share/distribute information and therefore produces
   messages and makes them available via a messaging infrastructure.
 * **Consumer**  - A consumer (or _receiver_ or _subscriber_) is a role in a
-  software system that retrieves/gets messages from an messaging infrastructure and consumes them. Consuming often, but not always, means to act on the information.
+  software system that retrieves/gets messages from an messaging infrastructure
+  and consumes them. Consuming often, but not always, means to act on the
+  information.
 * **Content** - Content (or _payload_ or _body_) is the information the producer
   wants the consumer(s) to receive and handle. Content may be any kind of data
   in any format.
@@ -91,7 +97,8 @@ a brief definitions for all the words in those names for orientation.
   the morning of this day if it happened to you. The great thing about facts is
   that they can be easily distributed and cached and copied and transformed
   because the exact information they carry will forever be true and never again
-  change. (These philosophical considerations matter a lot for arriving at smart architectures).
+  change. (These philosophical considerations matter a lot for arriving at smart
+  architectures).
 * **Job** - A job is a variation of a message whose content reflects an intent.
   The producer sends content with the intent of a consumer doing some work based
   on that content. "I just took this purchase order from a customer, please
@@ -133,18 +140,28 @@ a brief definitions for all the words in those names for orientation.
 
 ## Patterns
 
-* [Talk: "Messaging Patterns for Developers" (2021)](https://www.youtube.com/watch?v=ef1DK76rseM). This is a .NET talk, but conceptually also applicable to all other programming languages.
-* [Talk: "Eventing, Serverless, and the Extensible Enterprise", Voxxed Athens 2018](https://www.youtube.com/watch?v=qCNXUUlhJJE)
-* [Talk: "Events, data Points, and Messages", Thingmonk 2017](https://www.youtube.com/watch?v=ITrlLErsqzY&feature=emb_imp_woyt)
-* [Events, Data Points, and Messages - Choosing the right Azure messaging service for your data](https://azure.microsoft.com/en-us/blog/events-data-points-and-messages-choosing-the-right-azure-messaging-service-for-your-data/)
-* [Asynchronous messaging options](https://docs.microsoft.com/en-us/azure/architecture/guide/technology-choices/messaging)
+* [Talk: "Messaging Patterns for Developers"
+  (2021)](https://www.youtube.com/watch?v=ef1DK76rseM). <br>This is a .NET talk, but
+  conceptually also applicable to all other programming languages.
+* [Talk: "Eventing, Serverless, and the Extensible Enterprise", Voxxed Athens
+  2018](https://www.youtube.com/watch?v=qCNXUUlhJJE). <br>In this talk I discuss
+  (Micro-)services and serverless functions in context with messaging and
+  eventing.
+* [Talk: "Events, data Points, and Messages", Thingmonk
+  2017](https://www.youtube.com/watch?v=ITrlLErsqzY&feature=emb_imp_woyt). <br>This
+  is a short talk from where I drew the lines between events and messages.
+* [Events, Data Points, and Messages - Choosing the right Azure messaging
+  service for your
+  data](https://azure.microsoft.com/en-us/blog/events-data-points-and-messages-choosing-the-right-azure-messaging-service-for-your-data/). <br>A blog article explaining the differences between the services we offer.
+* [Asynchronous messaging
+  options](https://docs.microsoft.com/en-us/azure/architecture/guide/technology-choices/messaging).<br>Azure architecture center article that lays out those options in more detail.
 
 ## Open Standards
 
 ### CNCF CloudEvents
 
-* [CloudEvents 1.0.2. Spec](https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/spec.md)
-* [CloudEvents 1.0.02 Spec Repo](https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/) where you can find all the protocol bindings and format specs
+* [CloudEvents 1.0.2. specification](https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/spec.md).
+* [CloudEvents 1.0.2 repo](https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/) where you can find all the protocol bindings and format specs
 * [CloudEvents working branch](https://github.com/cloudevents/spec/tree/main)
 * [Talk: "CloudEvents Intro and Demos"](https://www.youtube.com/watch?v=yg7RuDWHwV8)
 * [Talk: "CloudEvents 1.0 and Beyond"](https://www.youtube.com/watch?v=YpUQbxx3jkk)
