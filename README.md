@@ -247,7 +247,7 @@ This is a list of the Azure Messaging services.
 
 * [Azure Messaging Overview](https://azure.microsoft.com/en-us/solutions/messaging-services/)
 * [Azure Service Bus](https://azure.microsoft.com/en-us/services/service-bus) -
-  transactional Queue and PubSub message broker with full JMS 2.0 support.
+  fast, transactional queue and pubsub message broker with full JMS 2.0 support.
    * [Azure Service Bus bindings for Azure Functions](https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-service-bus)
    * [Azure Service Bus JMS 2.0 developer guide](https://docs.microsoft.com/en-us/azure/service-bus-messaging/jms-developer-guide?tabs=JMS-20)
    * [Federation](https://docs.microsoft.com/en-us/azure/service-bus-messaging/service-bus-federation-overview)
@@ -259,17 +259,17 @@ This is a list of the Azure Messaging services.
    * [Transfers, locks, and settlement](https://docs.microsoft.com/en-us/azure/service-bus-messaging/message-transfers-locks-settlement) 
    * [Sessions](https://docs.microsoft.com/en-us/azure/service-bus-messaging/message-sessions)
    * [Federation](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-federation-overview)  
-* [Azure Event Grid](https://azure.microsoft.com/en-us/services/event-grid/) - publish/subscribe event router with support for CNCF CloudEvents
+* [Azure Event Grid](https://azure.microsoft.com/en-us/services/event-grid/) - publish/subscribe event router with support for CNCF CloudEvents, foundation for all events raised by Azure platform services.
   * [Tutorial: Automate resizing uploaded images using Event Grid](https://docs.microsoft.com/en-us/azure/event-grid/resize-images-on-storage-blob-upload-event?tabs=dotnet%2Cazure-powershell)
   * [Tutorial: Send email notifications about Azure IoT Hub events using Event Grid and Logic Apps](https://docs.microsoft.com/en-us/azure/event-grid/publish-iot-hub-events-to-logic-apps)
   * [Tutorial: Route custom events to Azure Relay Hybrid Connections with Azure CLI and Event Grid](https://docs.microsoft.com/en-us/azure/event-grid/custom-event-to-hybrid-connection)
-* [Azure Relay and Hybrid Connections](https://docs.microsoft.com/en-us/azure/azure-relay/relay-what-is-it)
+* [Azure Relay and Hybrid Connections](https://docs.microsoft.com/en-us/azure/azure-relay/relay-what-is-it) - WebSocket bridges for reaching application endpoints behind NATs and Firewalls, supporting HTTP requests and bi-directional binary streams.
   * [What is Relay?](https://docs.microsoft.com/en-us/azure/azure-relay/relay-what-is-it)
   * [Azure Relay Hybrid Connections protocol](https://docs.microsoft.com/en-us/azure/azure-relay/relay-hybrid-connections-protocol)
-* [Azure IoT Hub](https://azure.microsoft.com/en-us/services/iot-hub/)
-* [Azure WebPubSub](https://azure.microsoft.com/en-us/services/web-pubsub/)
-* [Azure SignalR](https://azure.microsoft.com/en-us/services/signalr-service/)
-* [Azure Notification Hubs](https://azure.microsoft.com/en-us/services/notification-hubs/)
+* [Azure IoT Hub](https://azure.microsoft.com/en-us/services/iot-hub/) - specialized broker focused on attaching "Internet of Things" devices and edge gateways to the cloud. 
+* [Azure WebPubSub](https://azure.microsoft.com/en-us/services/web-pubsub/) - Real-time publish-subscribe messaging for web application client development based on WebSockets
+* [Azure SignalR](https://azure.microsoft.com/en-us/services/signalr-service/) - Real-time publish-subscribe messaging with a .NET focused programming experience for web application client development based on WebSockets
+* [Azure Notification Hubs](https://azure.microsoft.com/en-us/services/notification-hubs/) - High-scale broadcast and multicast push notification distribution for all popular mobile platforms.  
 
 ### AWS
 
@@ -291,10 +291,10 @@ considerations as the Azure services.
 The Apache Software Foundation hosts several popular open source projects that
 produce message and event broker infrastructures.
 
-* [ActiveMQ](https://activemq.apache.org/)
-* [Qpid](https://qpid.apache.org/)
-* [Pulsar](https://pulsar.apache.org/)
-* [Kafka](https://kafka.apache.org/)
+* [ActiveMQ](https://activemq.apache.org/) - transactional queue and pubsub broker family (ActiveMQ "Classic" and Artemis)
+* [Qpid](https://qpid.apache.org/) - transactional queue and pubsub broker family, also including an AMQP router
+* [Pulsar](https://pulsar.apache.org/) - event stream engine and queue broker
+* [Kafka](https://kafka.apache.org/) - event stream engine
 
 ### CNCF
 
