@@ -1,6 +1,6 @@
 # Asynchronous Messaging and Eventing Resources
 
-[Why would I care?](#%22why-would-i-care%22) | [Definitions: Messaging or eventing infrastructure](#definitions-messaging-or-eventing-infrastructure) | [Resources: Introductions and Patterns](#introductions-and-patterns) | [Resources: Open Standards](#open-standards) | [Resources: Products & Cloud Services](#products--cloud-services)
+[Why would I care?](#why-would-i-care) | [Definitions: Messaging or eventing infrastructure](#definitions-messaging-or-eventing-infrastructure) | [Resources: Introductions and Patterns](#introductions-and-patterns) | [Resources: Open Standards](#open-standards) | [Resources: Products & Cloud Services](#products--cloud-services)
 
 ![service patterns](images/service-patterns.png)
 
