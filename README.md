@@ -295,6 +295,7 @@ produce message and event broker infrastructures.
 * [Qpid](https://qpid.apache.org/) - transactional queue and pubsub broker family, also including an AMQP router
 * [Pulsar](https://pulsar.apache.org/) - event stream engine and queue broker
 * [Kafka](https://kafka.apache.org/) - event stream engine
+* [Camel](https://camel.apache.org/) - integration framework with hundreds of components and several patterns 
 
 ### CNCF
 
