@@ -67,7 +67,7 @@ That is what asynchronous messaging infrastructure does, but for your apps.
   parties and will retry as often as necessary.
 * Buffering: A messaging infrastructure is generally great at accepting bursts
   of messages at once and organizing them for later retrieval. The retrieval can
-  then occur at the pace that your application can handle. That is alow called
+  then occur at the pace that your application can handle. That is also called
   load-leveling.
 * Network-Bridging: Messaging infrastructures can often be attached to multiple
   networks, allowing information to pass between applications in those networks
