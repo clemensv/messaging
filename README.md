@@ -239,6 +239,19 @@ with significant input from Microsoft.
 * [MQTT Project Site](https://mqtt.org/) including a resource directory
 
 
+## Books
+
+An incomplete list of books about product-/project-neutral messaging and
+eventing principles and patterns. I am an impatient book reader and prefer going
+straight to authoritative documents, therefore I am happy to take PRs for this
+section from readers who've been helped by particular books.
+
+* [Enterprise Patterns by Gregor Hohpe, 2003](https://www.enterpriseintegrationpatterns.com/gregor.html) - Timeless classic. Truth.
+* [Flow Architectures by James Urquhart, 2021](https://www.goodreads.com/book/show/51771839-flow-architectures) -
+  This is a very current, conceptual overview of various aspects of eventing; don't expect a
+  "how-to" book, but one that introduces the notion of application architectures
+  enabled by data in motion.
+
 ## Products & Cloud Services
 
 ### Microsoft Azure
