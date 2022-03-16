@@ -299,6 +299,7 @@ considerations as the Azure services.
   Azure Event Grid
 * [Amazon IoT Core](https://aws.amazon.com/en/iot-core/) corresponds to Azure
   IoT Hub.
+  
 ### Apache 
 
 The Apache Software Foundation hosts several popular open source projects that
@@ -315,9 +316,11 @@ produce message and event broker infrastructures.
 The Cloud Native Computing Foundation also hosts a few messaging and eventing
 centric projects.
 
-* [NATS](https://www.cncf.io/projects/nats/)
-* [Pravega](https://cncf.pravega.io/)
-* [Strimzi](https://www.cncf.io/projects/strimzi/)
+* [NATS](https://www.cncf.io/projects/nats/) - fast, simple pubsub message broker 
+* [Pravega](https://cncf.pravega.io/) - stream-oriented replicated storage 
+* [Strimzi](https://www.cncf.io/projects/strimzi/) - Kubernetes operator for Apache Kafka, 
+  curiously in CNCF and not in the ASF and the Apache Kafka project, which says something 
+  about the latter.
 
 ### Eclipse
 
@@ -325,6 +328,8 @@ The Eclipse Foundation has a strong IoT focus and hosts various MQTT-related
 projects. It is also hosting the Jakarta Messaging project that carries forward
 the popular JMS standard.
 
-* [Mosquitto](https://mosquitto.org/)
-* [Paho](https://www.eclipse.org/paho/)
-* [Jakarta Messaging (JMS)](https://projects.eclipse.org/projects/ee4j.messaging)
+* [Mosquitto](https://mosquitto.org/) - reference MQTT broker implementation 
+* [Paho](https://www.eclipse.org/paho/) - MQTT librarry collection for several programming languages
+* [Jakarta Messaging (JMS)](https://projects.eclipse.org/projects/ee4j.messaging) - the one-and-sadly-only universal 
+  Java API for message brokers, with an sadly-ultra-opinionated topology concept. Needs a thorough overhaul, 
+  but is here and very useful.
