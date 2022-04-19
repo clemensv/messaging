@@ -173,6 +173,10 @@ messaging space. The focus of this section is on open and
 product/project-neutral data formats and protocol standards, not on
 project-proprietary wire formats even if the projects are open source. 
 
+* [Talk: "Azure Messaging: Standards Matter", Azure & AI Conference
+  2022](https://youtu.be/FVOhLqE9fzw)<br>Discussion of patterns and the
+  standards enumerated below.
+
 ### CNCF CloudEvents
 
 
@@ -261,11 +265,13 @@ This is a list of the Azure Messaging services.
 * [Azure Messaging Overview](https://azure.microsoft.com/en-us/solutions/messaging-services/)
 * [Azure Service Bus](https://azure.microsoft.com/en-us/services/service-bus) -
   fast, transactional queue and pubsub message broker with full JMS 2.0 support.
+   * [Talk: Azure Service Bus Deep Dive, Azure & AI Conference 2022](https://youtu.be/LM7DByKOHBs)
    * [Azure Service Bus bindings for Azure Functions](https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-service-bus)
    * [Azure Service Bus JMS 2.0 developer guide](https://docs.microsoft.com/en-us/azure/service-bus-messaging/jms-developer-guide?tabs=JMS-20)
    * [Federation](https://docs.microsoft.com/en-us/azure/service-bus-messaging/service-bus-federation-overview)
 * [Azure Event Hubs](https://azure.microsoft.com/en-us/services/event-hubs/) -
   fast event stream engine with AMQP, HTTP, and Apache Kafka protocol support.
+   * [Talk: Azure Event Hubs Deep Dive, Azure & AI Conference 2022](https://youtu.be/358TuU88Nvg)
    * [Use Azure Event Hubs from Apache Kafka applications](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-for-kafka-ecosystem-overview)
    * [Azure Schema Registry in Azure Event Hubs](https://docs.microsoft.com/en-us/azure/event-hubs/schema-registry-overview)
    * [How to create a Spring Cloud Stream Binder application with Azure Event Hubs](https://docs.microsoft.com/en-us/azure/developer/java/spring-framework/configure-spring-cloud-stream-binder-java-app-azure-event-hub)
