@@ -150,7 +150,7 @@ You can find all my published presentations as PowerPoint files and PDFs in [thi
 
 ## Introductions and Patterns
 
-* [Talk: "What is a message queue and why would I use one?", We Are Developers Berlin (2022)](./presentations/2022-06-03%20Why%20Use%20Queues.pdf) <br> Introduction to queues in general and message queues in particular and where and why they are used. (Video recording pending publication) 
+* [Talk: "What is a message queue and why would I use one?", We Are Developers Berlin (2022)](https://www.youtube.com/watch?v=bHSV916YbHE) <br> Introduction to queues in general and message queues in particular and where and why they are used. 
 * [Talk: "Messaging Patterns for Developers"
   (2021)](https://www.youtube.com/watch?v=ef1DK76rseM). <br>This is a .NET talk, but
   conceptually also applicable to all other programming languages.
