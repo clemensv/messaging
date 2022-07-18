@@ -142,8 +142,16 @@ a brief definitions for all the words in those names for orientation.
   brokers have internal facilities that help with noting those checkpoints.
 * **Broker** - Broker (or _service bus_) is the term for a server or
   infrastructure that brokers messages and does so via queues or routers or
-  streams.
-
+  streams. Brokers generally only act on metadata of messages and do not consider
+  the content of the message.
+* **Aggregator** - An aggregator or **stream processor** or **stream analytics** 
+  engine is a compute service that takes one more more event streams as input 
+  and yields one or more event streams or derived discrete events as output. The
+  output(s) might be a filtered view of the input stream or consist of computed 
+  aggregates of input eventsor it might be a join of multiple streams or streams
+  with reference data. Contrary to brokers, aggregators will consider the content
+  of events.
+  
 ## Presentation Folder
 
 You can find all my published presentations as PowerPoint files and PDFs in [this folder](./presentations/). Content is generally [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/). 
