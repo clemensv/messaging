@@ -2,7 +2,7 @@
 
 [Why would I care?](#why-would-i-care) | [Definitions: Messaging or eventing infrastructure](#definitions-messaging-or-eventing-infrastructure) | [Resources: Introductions and Patterns](#introductions-and-patterns) | [Resources: Open Standards](#open-standards) | [Resources: Products & Cloud Services](#products--cloud-services)
 
-![service patterns](images/service-patterns.png)
+<img src="images/service-patterns.png" id="img1">
 
 Once you've read through this intro, you will find that this document contains a
 (growing) list of resources that cover whether and how to use asynchronous
