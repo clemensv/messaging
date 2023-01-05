@@ -1,3 +1,4 @@
+<div id="thispage">
 # Asynchronous Messaging and Eventing Resources
 
 [Why would I care?](#why-would-i-care) | [Definitions: Messaging or eventing infrastructure](#definitions-messaging-or-eventing-infrastructure) | [Resources: Introductions and Patterns](#introductions-and-patterns) | [Resources: Open Standards](#open-standards) | [Resources: Products & Cloud Services](#products--cloud-services)
@@ -352,3 +353,4 @@ the popular JMS standard.
 * [Jakarta Messaging (JMS)](https://projects.eclipse.org/projects/ee4j.messaging) - the one-and-sadly-only universal 
   Java API for message brokers, with an sadly-ultra-opinionated topology concept. Needs a thorough overhaul, 
   but is here and very useful.
+</div>
