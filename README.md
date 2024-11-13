@@ -207,6 +207,8 @@ contexts. CloudEvents then defines formats (JSON, Avro, AMQP, Protbuf, XML) in
 which a CloudEvent can be expressed and protocol bindings for how CloudEvents
 can be transported (HTTP, AMQP, MQTT, Kafka).  
 
+![CloudEvents](images/CloudEvents.svg)
+
 * [CloudEvents Primer](https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/primer.md) - An introduction to CloudEvents with architectural considerations.
 * [CloudEvents - Version 1.0.2](https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/spec.md). This is the main specification.
   * [HTTP Protocol Binding for CloudEvents - Version 1.0.2](https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/bindings/http-protocol-binding.md)
@@ -238,6 +240,8 @@ catalogs and discovery services. It is a companion to CloudEvents and aims to
 provide a common way to find and use schemas and messages in a CloudEvents
 context, but also for general messaging infrastructures. xRegistry is extensible
 to support other metadata models.
+
+![xRegistry](images/xRegistry.svg)
 
 * [xRegistry "manifest" document examples](https://github.com/clemensv/xregistry-cli/tree/main/samples/message-definitions)
 * [CNCF xRegistry Site](https://xregistry.io/)
