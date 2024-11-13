@@ -15,7 +15,7 @@ years now, starting well before the name "Azure" even existed.
 
 Our team owns multiple hyperscale broker platforms (Azure Service Bus, Event
 Hubs, Event Grid, and Relay) that are deployed in hundreds of large clusters in
-over 60 Azure regions all around the world and handle many (!) trillion (!)
+over 70 Azure regions all around the world and handle many (!) trillion (!)
 requests each day (!). We also invented, prototyped, and productized several
 other Azure capabilities (Azure IoT Hub, Azure Notification Hubs, Tenant
 Resource Provisioning) that are now owned by different teams at Microsoft.
@@ -23,10 +23,11 @@ Resource Provisioning) that are now owned by different teams at Microsoft.
 In addition to the product work, I am deeply engaged in open interoperability
 standards and represent Microsoft on the OASIS AMQP Technical Committee (as
 co-chair), the OASIS MQTT Technical Committee, the CNCF Open Telemetry Working
-Group, the CNCF CloudEvents project, and the CNCF Serverless Working Group. In
-the past, I've also been a member of the OPC Foundations Technical Advisory
-Council and the OPC UA Working Group where I've worked on the PubSub
-specification in particular. Relevant technical documents are also linked below.
+Group, the CNCF CloudEvents and CNCF xRegistry projects, and the CNCF Serverless
+Working Group. In the past, I've also been a member of the OPC Foundations
+Technical Advisory Council and the OPC UA Working Group where I've worked on the
+PubSub specification in particular. Relevant technical documents are also linked
+below.
 
 ## "Why would I care?"
 
@@ -151,6 +152,12 @@ a brief definitions for all the words in those names for orientation.
   aggregates of input eventsor it might be a join of multiple streams or streams
   with reference data. Contrary to brokers, aggregators will consider the content
   of events.
+* **Schema** - A formal description of the structure of the content of a message
+  or event. Schemas are used to validate the content of messages and events and
+  to help with the interpretation of the content. Schemas are often versioned and
+  evolve over time. Schemas are often shared between producers and consumers to
+  ensure that the content is understood correctly.
+
   
 ## Presentation Folder
 
@@ -158,6 +165,7 @@ You can find all my published presentations as PowerPoint files and PDFs in [thi
 
 ## Introductions and Patterns
 
+* [Talk: Integrate 2024 London: The evolution of Azure Messaging](https://www.youtube.com/watch?v=KWZGIPzgRU0)<br>An overview of Azure Messaging brokers and the latest updates.
 * [Talk: "What is a message queue and why would I use one?", We Are Developers Berlin (2022)](https://www.youtube.com/watch?v=bHSV916YbHE) <br> Introduction to queues in general and message queues in particular and where and why they are used. 
 * [Talk: "Messaging Patterns for Developers"
   (2021)](https://www.youtube.com/watch?v=ef1DK76rseM). <br>This is a .NET talk, but
@@ -223,6 +231,36 @@ can be transported (HTTP, AMQP, MQTT, Kafka).
 * [Talk: "CloudEvents 1.0 and Beyond"](https://www.youtube.com/watch?v=YpUQbxx3jkk)
 * [Talk: "CloudEvents DeepDive", KubeCon Europe 2019](https://www.youtube.com/watch?v=-3gOqR_TGEs)
 
+### CNCF xRegistry
+
+xRegistry is a project spawned from the CloudEvents project that aims to provide a common API and document format for schema and message
+catalogs and discovery services. It is a companion to CloudEvents and aims to
+provide a common way to find and use schemas and messages in a CloudEvents
+context, but also for general messaging infrastructures. xRegistry is extensible
+to support other metadata models.
+
+* [xRegistry "manifest" document examples](https://github.com/clemensv/xregistry-cli/tree/main/samples/message-definitions)
+* [CNCF xRegistry Site](https://xregistry.io/)
+  * [CNCF xRegistry Repo](https://github.com/xregistry/spec/)
+    * [xRegistry Primer](https://github.com/xregistry/spec/blob/main/core/primer.md)
+    * [xRegistry Core Spec](https://github.com/xregistry/spec/blob/main/core/spec.md)
+    * [xRegistry Schema Spec](https://github.com/xregistry/spec/blob/main/schema/spec.md)
+    * [xRegistry Message Spec](https://github.com/xregistry/spec/blob/main/message/spec.md)
+    * [xRegistry Endpoint Spec](https://github.com/xregistry/spec/blob/main/endpoint/spec.md)
+    * [xRegistry CloudEvents registry (Schema + Message + Endpoint)](https://github.com/xregistry/spec/blob/main/cloudevents/spec.md)
+* Prototypical Tools:
+  * [xRegistry CLI](https://github.com/clemensv/xregistry-cli)<br>The xRegistry CLI is a command-line tool that allows you to 
+    interact with xRegistry servers and lets you modify xRegistry manifest documents. More importantly, it's a code generator
+    that can create strongly-typed producer and consumer code for Apache Kafka, Azure Event Hubs, and Fabric Eventstreams (and
+    other services) from xRegistry schema and message documents and endpoints.
+  * [xRegistry Server](https://github.com/duglin/xreg-github)<br>The xRegistry Server is a Go implementation of the xRegistry
+    API. It is a reference implementation maintained by the chair of the WG that can be used as a starting point for your own xRegistry server.
+  * [Avrotize](https://github.com/clemensv/avrotize)<br>Avrotize is a "Rosetta Stone" for data structure definitions, allowing you to convert 
+    between numerous data and database schema formats and to generate code for different programming languages. It is, for instance, a well-documented 
+    and predictable converter and code generator for data structures originally defined in JSON Schema (of arbitrary complexity). 
+    The tool leans on the Apache Avro-derived Avrotize Schema as its integration schema model.
+  * [Avrotize Visual Studio Code Extension](https://marketplace.visualstudio.com/items?itemName=clemensvasters.avrotize)<br>An extension 
+    for Visual Studio Code that allows you to interact with Avrotize from the file explorer.
 
 ### OASIS AMQP 
 
@@ -255,6 +293,65 @@ with significant input from Microsoft.
 * [MQTT 5.0](https://docs.oasis-open.org/mqtt/mqtt/v5.0/mqtt-v5.0.html)
 * [MQTT Project Site](https://mqtt.org/) including a resource directory
 
+### Apache Avro
+
+Avro is a data serialization system that provides rich data structures and a
+compact, fast, binary data format. At Microsoft, we like Avro's Schema format 
+even more than we like its binary encoding. Unfortunately and fortunately, the
+Avro project is a bit of a "sleeping beauty" and has not seen much evolution in
+the last few years. We think it could need a bit of a jolt and to that effect,
+we have a few pending proposals that we hope to get into the project soon.
+
+* [Official Avro Specification](https://avro.apache.org/docs/1.12.0/specification/)
+* [Formal Avro Schema spec (proposed)](https://github.com/clemensv/avrotize/blob/master/specs/avro-schema.md)<br>
+  This is a proposed formal specification of the Avro Schema format in RFC-style
+  that is currently only informally described in the Avro documentation. The
+  proposal aims to make the Avro Schema format more predictable and easier to
+  implement and to use in code generators and other tools.
+* [Avrotize Schema spec (proposed)](https://github.com/clemensv/avrotize/blob/master/specs/avrotize-schema.md)<br>
+  This is a proposed formal specification of the Avrotize Schema format that is
+  derived from the Avro Schema format and adds a few additional features that
+  make it more suitable for use in code generators and other tools. The Avrotize
+  Schema format is a superset of the Avro Schema format.
+* [Avro Schema JSON Schema (proposed)](https://github.com/clemensv/avrotize/blob/master/specs/avro-schema-schema.json)<br>
+  This is a proposed JSON Schema for the Avro Schema format that can be used to
+  validate Avro Schema documents.
+* ["Plain JSON" encoding for Apache Avro](https://github.com/clemensv/avrotize/blob/master/avrojson.md)<br>
+  The Apache Avro project defines a JSON Encoding, which is optimized for
+  encoding data in JSON, but primarily aimed at exchanging data between
+  implementations of the Apache Avro specification. The choices made for this
+  encoding severely limit the interoperability with other JSON serialization
+  frameworks. This document defines an alternate, additional mode for Avro JSON
+  Encoders, preliminarily named "Plain JSON", that specifically addresses
+  identified interoperability blockers. 
+  * [JIRA-3986](https://issues.apache.org/jira/browse/AVRO-3986)
+  * Illustrating [Avro project PR for C#](https://github.com/apache/avro/pull/2888)
+
+
+## Related Projects
+
+* [Real-Time Sources](https://github.com/clemensv/real-time-sources/)<br>
+  Learning how to build event streaming solutions with Microsoft Azure Event
+  Hubs, Microsoft Fabric Event Streams, and any Apache Kafka compatible server
+  and service is more interesting when you have real time data sources to work
+  with. This repo contains command line tools, written in Python, that can be
+  used to retrieve real-time streaming data and related reference data from
+  various APIs, and then routing the data to Apache Kafka compatible endpoints.
+  For each tool, there is a corresponding, pre-built (Docker-) container image
+  that you can pull and use instantly from this repo's container registry.
+  * [GTFS Realtime - Public transport data](https://github.com/clemensv/real-time-sources/blob/main/gtfs/CONTAINER.md)
+  * [NOAA Tides ands Currents - Water level and current data](https://github.com/clemensv/real-time-sources/blob/main/noaa/CONTAINER.md)
+  * [RSS Feeds - News and blog posts](https://github.com/clemensv/real-time-sources/blob/main/rss/CONTAINER.md)
+  * [Pegelonline - Water level and current data](https://github.com/clemensv/real-time-sources/blob/main/pegelonline/CONTAINER.md)
+  * [USGS Instantaneous Values - Water quality and quantity data](https://github.com/clemensv/real-time-sources/blob/main/usgs-iv/CONTAINER.md)
+* [Forza Telemetry Bridge](https://github.com/clemensv/forza-telemetry-bridge)<br>
+  ForzaBridge is a console application designed to capture and forward Forza
+  Motorsport telemetry data to Microsoft Azure Event Hubs or Microsoft Fabric
+  Event Streams. It utilizes UDP to listen for telemetry data sent from Forza
+  Motorsport games and forwards this data after processing and formatting into
+  cloud event streams. The bridge is immediately derived from a project that
+  implements a production telemetry pipeline for race cars competing in the WEC
+  and IMSA endurance championships.
 
 ## Books
 
