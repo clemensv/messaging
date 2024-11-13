@@ -368,6 +368,33 @@ section from readers who've been helped by particular books.
 
 ## Products & Cloud Services
 
+### Microsoft Fabric
+
+Microsoft Fabric is Microsoft's data platform. The "Real-Time Intelligence"
+feature set combines event streaming, event stores and event processing into an
+easy-to-use SaaS offering aimed at data analysts and data scientists. The "Event
+Streams" feature set is built on top of the popular and proven Microsoft Azure
+Event Hubs and Azure Stream Analytics services and provides a fully managed,
+scalable, and secure event streaming platform. The Fabric Eventhouse is the
+SaaS-incarnation of the Azure Data Explorer service, which is the evolution of
+the Kusto database that is used to power many of Microsoft's own telemetry
+systems. Fabric Data Activator allows acting on complex conditions in real-time,
+putting processes or people into the loop of processes when needed.
+
+* [Microsoft Fabric](https://www.microsoft.com/en-us/microsoft-fabric)<br>Main
+  product page on Microsoft.com
+* [Microsoft Fabric Product Access](https://fabric.microsoft.com/)<br>Get
+  started immediately with the Microsoft Fabric platform. There is a very
+  generous free trial offering available.
+* [Microsoft Fabric Documentation](https://learn.microsoft.com/en-us/fabric/)<br>Entry point into the Fabric docs
+* [Microsoft Fabric Real-Time Intelligence](https://learn.microsoft.com/en-us/fabric/real-time-intelligence/)
+  * [Microsoft Fabric Event Streams](https://learn.microsoft.com/en-us/fabric/real-time-intelligence/event-streams/overview?tabs=enhancedcapabilities)
+  * [Microsoft Fabric Eventhouse](https://learn.microsoft.com/en-us/fabric/real-time-intelligence/eventhouse)
+  * [Microsoft Fabric Real-Time Dashboards](https://learn.microsoft.com/en-us/fabric/real-time-intelligence/dashboard-real-time-create)
+  * [Microsoft Fabric Data Activator](https://learn.microsoft.com/en-us/fabric/data-activator/data-activator-introduction)
+
+* [Video: Worlds Fastest Medallion Load - Brian Bønk](https://www.youtube.com/watch?v=qsEB5f8dnXs)
+
 ### Microsoft Azure
 
 This is a list of the Azure Messaging services.
